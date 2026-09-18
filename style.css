@@ -1149,6 +1149,68 @@ section {
   }
 }
 
+@media (max-width: 480px) {
+  .site-header {
+    height: 72px;
+    padding: 0 4%;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .lang-switcher {
+    max-width: 82px;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.72rem;
+  }
+
+  .hero {
+    padding: 150px 4% 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .market-cards-grid,
+  .features-grid,
+  .steps-grid,
+  .pricing-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card,
+  .step-card,
+  .pricing-card,
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .site-footer {
+    padding: 60px 4% 30px;
+  }
+}
+
 /* Light Theme Component Overrides */
 [data-theme="light"] .hero-content h1 {
   background: linear-gradient(180deg, #0f172a 70%, #334155);
