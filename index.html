@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title">InvestPro - Invest Smarter. Grow Faster</title>
+  <meta name="description"
+    content="Join thousands of investors building long term wealth with data-driven tools, real time market insights, and a platform built for every experience level.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Live Market Ticker Banner -->
+  <div class="ticker-banner">
+    <div class="ticker-content" id="ticker-track">
+      <!-- Injected by JS: live asset tickers -->
+    </div>
+  </div>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">InvestPro</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#markets" data-i18n="nav.markets">Markets</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#insights" data-i18n="nav.insights">Insights</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <!-- Currency Switcher -->
+      <select id="currency-switcher" class="lang-switcher" aria-label="Select Currency">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="SAR">SAR (ر.س)</option>
+        <option value="CNY">CNY (¥)</option>
+      </select>
+      <!-- Language Switcher -->
+      <select id="lang-switcher" class="lang-switcher" aria-label="Select Language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="ar">العربية</option>
+        <option value="zh">中文</option>
+      </select>
+      <a href="login.html" class="btn btn-outline" data-i18n="nav.login">Log In</a>
+      <a href="signup.html" class="btn btn-primary" data-i18n="nav.signup">Sign Up</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 data-i18n="hero.title">Invest Smarter. Grow Faster</h1>
+      <p data-i18n="hero.subtitle">Join thousands of investors building long-term wealth with data-driven tools,
+        real-time market insights, and a platform built for every experience level.</p>
+
+      <div class="hero-actions">
+        <a href="signup.html" class="btn btn-primary" data-i18n="hero.cta_start">Start Investing</a>
+        <a href="#demo" class="btn btn-outline" data-i18n="hero.cta_demo">Watch Demo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>$2.4B+</h3>
+          <p data-i18n="hero.stat_assets_label">Assets Managed</p>
+        </div>
+        <div class="stat">
+          <h3>150K+</h3>
+          <p data-i18n="hero.stat_investors_label">Active Investors</p>
+        </div>
+        <div class="stat">
+          <h3>4.8/5</h3>
+          <p data-i18n="hero.stat_rating_label">User Rating</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/dashboard-preview.png" alt="Investment Dashboard Preview">
+    </div>
+  </section>
+  <!-- Live Markets Grid Section -->
+  <section class="markets-section" id="markets">
+    <div class="section-header">
+      <h2 data-i18n="ticker.title">Live Market Trends</h2>
+      <div class="market-filter-tabs">
+        <button class="filter-btn active" data-filter="all" data-i18n="ticker.all">All Assets</button>
+        <button class="filter-btn" data-filter="stocks" data-i18n="ticker.stocks">Stocks</button>
+        <button class="filter-btn" data-filter="crypto" data-i18n="ticker.crypto">Crypto</button>
+      </div>
+    </div>
+    <div class="market-cards-grid" id="market-cards-container">
+      <!-- Dynamically generated market asset cards -->
+    </div>
+  </section>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-header">
+      <h2 data-i18n="features.title">Why Investors Choose Us</h2>
+      <p data-i18n="features.subtitle">Everything you need to invest with confidence, all in one platform.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18" />
+            <path d="M18 17V9" />
+            <path d="M13 17V5" />
+            <path d="M8 17v-3" />
+          </svg></div>
+        <h3 data-i18n="features.f1_title">Real-Time Market Data</h3>
+        <p data-i18n="features.f1_desc">Track stocks, bonds, and crypto with live price updates and in-depth analytics.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg></div>
+        <h3 data-i18n="features.f2_title">Bank-Level Security</h3>
+        <p data-i18n="features.f2_desc">Your funds and data are protected with 256-bit encryption and two-factor
+          authentication.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg></div>
+        <h3 data-i18n="features.f3_title">Smart Portfolio Tools</h3>
+        <p data-i18n="features.f3_desc">AI-driven recommendations help you rebalance and optimize your holdings
+          automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg></div>
+        <h3 data-i18n="features.f4_title">Low Fees</h3>
+        <p data-i18n="features.f4_desc">Keep more of what you earn with transparent, industry-low commission rates.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg></div>
+        <h3 data-i18n="features.f5_title">Global Markets</h3>
+        <p data-i18n="features.f5_desc">Access exchanges across 30+ countries from a single unified account.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg></div>
+        <h3 data-i18n="features.f6_title">24/7 Support</h3>
+        <p data-i18n="features.f6_desc">Talk to real advisors anytime, day or night, wherever you are.</p>
+      </div>
+    </div>
+  </section>
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="portfolio">
+    <div class="section-header">
+      <h2 data-i18n="how.title">Start Investing in 3 Simple Steps</h2>
+      <p data-i18n="how.subtitle">From sign-up to your first investment in minutes</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 data-i18n="how.step1_title">Create Your Account</h3>
+        <p data-i18n="how.step1_desc">Sign up in under 5 minutes with just your email and basic details.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 data-i18n="how.step2_title">Fund Your Wallet</h3>
+        <p data-i18n="how.step2_desc">Link your bank account or card and deposit funds securely.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 data-i18n="how.step3_title">Start Investing</h3>
+        <p data-i18n="how.step3_desc">Choose your assets or let our AI build a portfolio tailored to your goals.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Pricing Section -->
+  <section class="pricing" id="insights">
+    <div class="section-header">
+      <h2 data-i18n="pricing.title">Simple, Transparent Pricing</h2>
+      <p data-i18n="pricing.subtitle">Choose the plan that fits your investing style</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Starter Plan -->
+      <div class="pricing-card">
+        <h3 data-i18n="pricing.starter_title">Starter</h3>
+        <p class="price"><span class="curr-sym">$</span><span class="price-val" data-usd="0">0</span> <span
+            data-i18n="pricing.starter_period">/ month</span></p>
+        <ul>
+          <li data-i18n="pricing.starter_f1">Basic market data</li>
+          <li data-i18n="pricing.starter_f2">1 portfolio</li>
+          <li data-i18n="pricing.starter_f3">Standard support</li>
+        </ul>
+        <a href="signup.html" class="btn btn-outline" data-i18n="pricing.cta">Get Started</a>
+      </div>
+      <!-- Pro Plan (Featured) -->
+      <div class="pricing-card featured">
+        <span class="badge" data-i18n="pricing.pro_badge">Most popular</span>
+        <h3 data-i18n="pricing.pro_title">Pro</h3>
+        <p class="price"><span class="curr-sym">$</span><span class="price-val" data-usd="19">19</span> <span
+            data-i18n="pricing.pro_period">/ month</span></p>
+        <ul>
+          <li data-i18n="pricing.pro_f1">Real-time data and alerts</li>
+          <li data-i18n="pricing.pro_f2">Unlimited portfolios</li>
+          <li data-i18n="pricing.pro_f3">AI portfolio tools</li>
+          <li data-i18n="pricing.pro_f4">Priority support</li>
+        </ul>
+        <a href="signup.html" class="btn btn-primary" data-i18n="pricing.cta">Get Started</a>
+      </div>
+      <!-- Elite Plan -->
+      <div class="pricing-card">
+        <h3 data-i18n="pricing.elite_title">Elite</h3>
+        <p class="price"><span class="curr-sym">$</span><span class="price-val" data-usd="49">49</span> <span
+            data-i18n="pricing.elite_period">/ month</span></p>
+        <ul>
+          <li data-i18n="pricing.elite_f1">Everything in Pro</li>
+          <li data-i18n="pricing.elite_f2">Dedicated Advisor</li>
+          <li data-i18n="pricing.elite_f3">Global market access</li>
+          <li data-i18n="pricing.elite_f4">24/7 VIP support</li>
+        </ul>
+        <a href="signup.html" class="btn btn-outline" data-i18n="pricing.cta">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="about">
+    <div class="section-header">
+      <h2 data-i18n="testimonials.title">Trusted by Investors Worldwide</h2>
+      <p data-i18n="testimonials.subtitle">Don't just take our word for it</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="testimonials.t1_quote">"I went from knowing nothing about investing to managing a diversified
+          portfolio in just a few months."</p>
+        <div class="testimonial-author">
+          <img src="assets/sarah.png" alt="Sarah M.">
+          <div>
+            <h4 data-i18n="testimonials.t1_name">Sarah M.</h4><span data-i18n="testimonials.t1_role">Pro Plan
+              User</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="testimonials.t2_quote">"The AI portfolio recommendations have consistently outperformed my old
+          manual strategy."</p>
+        <div class="testimonial-author">
+          <img src="assets/david.png" alt="David O.">
+          <div>
+            <h4 data-i18n="testimonials.t2_name">David O.</h4><span data-i18n="testimonials.t2_role">Elite Plan
+              User</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="testimonials.t3_quote">"Being able to invest across global markets from one account has been a
+          game changer."</p>
+        <div class="testimonial-author">
+          <img src="assets/amara.png" alt="Amara K.">
+          <div>
+            <h4 data-i18n="testimonials.t3_name">Amara K.</h4><span data-i18n="testimonials.t3_role">Pro Plan
+              User</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Site Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-brand">
+      <h3>InvestPro</h3>
+      <p data-i18n="footer.tagline">Smart investing tools for every stage of your financial journey.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer.company">Company</h4>
+      <ul>
+        <li><a href="#about" data-i18n="footer.about">About Us</a></li>
+        <li><a href="#careers" data-i18n="footer.careers">Careers</a></li>
+        <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer.resources">Resources</h4>
+      <ul>
+        <li><a href="#blog" data-i18n="footer.blog">Blog</a></li>
+        <li><a href="#guides" data-i18n="footer.guides">Investing Guides</a></li>
+        <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
+        <li><a href="#help" data-i18n="footer.help">Help Center</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer.legal">Legal</h4>
+      <ul>
+        <li><a href="#terms" data-i18n="footer.terms">Terms of Service</a></li>
+        <li><a href="#privacy" data-i18n="footer.privacy">Privacy Policy</a></li>
+        <li><a href="#disclosure" data-i18n="footer.disclosure">Risk Disclosure</a></li>
+        <li><a href="#compliance" data-i18n="footer.compliance">Compliance</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer.language">Language</h4>
+      <ul>
+        <li><a href="#" data-lang="en">English</a></li>
+        <li><a href="#" data-lang="fr">Français</a></li>
+        <li><a href="#" data-lang="es">Español</a></li>
+        <li><a href="#" data-lang="ar">العربية</a></li>
+        <li><a href="#" data-lang="zh">中文</a></li>
+      </ul>
+    </div>
+    <div class="footer-button">
+      <p data-i18n="footer.copyright">&copy; 2026 InvestPro. All rights reserved.</p>
+      <p class="disclaimer" data-i18n="footer.disclaimer">Investing involves risk, including possible loss of principal.
+        Past performance does not guarantee future results.</p>
+    </div>
+  </footer>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
